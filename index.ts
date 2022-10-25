@@ -1,6 +1,5 @@
 import { serve } from "https://deno.land/std@0.119.0/http/server.ts";
 
-
 async function handler(_req: Request): Promise<Response> {
   try {
     const wordToFind = "chien";
@@ -58,3 +57,5 @@ const similarity = async (word1, word2) => {
   console.log("similarityValue", similarityResponseJson);
   return Number(similarityResponseJson.simscore);
 };
+
+serve(handler);
